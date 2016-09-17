@@ -1,0 +1,24 @@
+<% if !@creation_message.nil? %>
+<%= @creation_message %>
+<% end %>
+<h1>Name: <%= @meetup_obj.name %></h1>
+<h1>Description: <%= @meetup_obj.description %></h1>
+<h1>Location: <%= @meetup_obj.location %></h1>
+<h1>Creator: <%= @meetup_obj.user.username %> </h1>
+<h1>Time: <%= @meetup_obj.time %></h1>
+<h1>Created At: <%= @meetup_obj.created_at %></h1>
+
+<% unless @signups.nil? %>
+  <% @signups.users.each do |signup| %>
+    <h1>Attendees: <br> <%= signup.username %> <br> </h1>
+  <% end %>
+<% end %>
+
+<%  unless @signups.nil? %>
+  <% unless @signups.users.include?(@current_user) %>
+    <form class="" action="/meetups/<%= @meetup_obj.id %>" method="post">
+      <input type="submit" id="Join Meetup" value="Join Meetup">
+    </form>
+  <% end %>
+<% end %>
+<a href="/meetups">All Meetups</a>

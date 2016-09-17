@@ -28,7 +28,6 @@ feature "as a user" do
   scenario "meetups should be listed alphabetically" do
     populate_meetups
     visit "/meetups"
-    # save_and_open_page
     sign_in_as test_user
 
     meetupclass = page.all(:css, ".meetup")

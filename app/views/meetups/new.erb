@@ -1,0 +1,24 @@
+<h1>Create new meetup</h1>
+<% if !@errors.nil? %>
+  <% @errors.each do |error| %>
+    <h2> <%= error %> </h2>
+  <% end %>
+<% end %>
+
+<form class="" action="/new" method="post">
+
+  <label for="Name">Name: </label>
+  <input type="text" name="Name" id="Name" value="<%=params[:Name]%>"><br>
+
+  <label for="Time">Time: </label>
+  <input type="text" name="Time" value="<%=params[:Time]%>"><br>
+
+  <label for="Location">Location: </label>
+  <input type="text" name="Location" id="location" value="<%=params[:Location]%>"><br><br>
+
+  <label for="Description">Description: </label>
+  <input type="text_area" name="Description" id="description" value="<%=params[:Description]%>"><br>
+
+  <input type="submit" id="submit" value="Submit">
+
+</form>

@@ -3,7 +3,7 @@
 <% @meetups.each do |meetup| %>
   <div class="meetup">
     <ul>
-      <li><a target="_blank" href="/meetups/<%= meetup.id %>"><%= meetup.name %></a></li>
+      <li><a href="/meetups/<%= meetup.id %>"><%= meetup.name %></a></li>
       <li> <%= meetup.user.username %></li>
       <li><%= meetup.description %></li>
       <li><%= meetup.location %></li>
@@ -12,3 +12,5 @@
     </ul>
   </div>
 <% end %>
+
+<a href="/new">Create new meetup</a>
